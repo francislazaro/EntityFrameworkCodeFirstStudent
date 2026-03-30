@@ -1,8 +1,8 @@
-namespace CodeFirstStudentApp
+namespace EntityFrameworkCodeFirstStudent
 {
     public class Student
     {
-        public int StudentID { get; set; }
-        public string StudentName { get; set; }
+        public int StudentId { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 using System.Data.Entity;
 
-namespace CodeFirstStudentApp
+namespace EntityFrameworkCodeFirstStudent
 {
     public class StudentContext : DbContext
     {

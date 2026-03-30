@@ -1,32 +1,25 @@
 using System;
-using System.Data.Entity;
 
-namespace CodeFirstStudentApp
+namespace EntityFrameworkCodeFirstStudent
 {
     class Program
     {
         static void Main(string[] args)
         {
-            using (var db = new StudentContext())
+            using (var context = new StudentContext())
             {
-                var student = new Student { StudentName = "John Doe" };
-                db.Students.Add(student);
-                db.SaveChanges();
+                var student = new Student
+                {
+                    Name = "John Doe"
+                };
 
-                Console.WriteLine("Student saved!");
-                Console.ReadLine();
+                context.Students.Add(student);
+                context.SaveChanges();
+
+                Console.WriteLine("Student added successfully!");
             }
+
+            Console.ReadLine();
         }
-    }
-
-    public class Student
-    {
-        public int StudentID { get; set; }
-        public string StudentName { get; set; }
-    }
-
-    public class StudentContext : DbContext
-    {
-        public DbSet<Student> Students { get; set; }
     }
 }
